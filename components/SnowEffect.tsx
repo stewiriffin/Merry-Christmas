@@ -10,13 +10,11 @@ export default function SnowEffect() {
   });
 
   useEffect(() => {
-    // Set initial size
     setWindowSize({
       width: window.innerWidth,
       height: window.innerHeight,
     });
 
-    // Update size on resize
     const handleResize = () => {
       setWindowSize({
         width: window.innerWidth,
@@ -36,7 +34,6 @@ export default function SnowEffect() {
       gravity={0.03}
       colors={["#ffffff", "#f0f0f0", "#e8e8e8"]}
       drawShape={(ctx) => {
-        // Draw white circles (snowflakes)
         ctx.beginPath();
         ctx.arc(0, 0, 3, 0, 2 * Math.PI);
         ctx.fillStyle = "#ffffff";

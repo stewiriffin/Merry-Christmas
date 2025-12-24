@@ -18,12 +18,11 @@ export default function NaughtyNice({ onClose }: NaughtyNiceProps) {
   const [naughtyReason, setNaughtyReason] = useState("");
 
   const handleMouseDown = () => {
-    if (result) return; // Don't scan again if already have result
+    if (result) return;
 
     setIsScanning(true);
     setProgress(0);
 
-    // Animate progress bar over 3 seconds
     const interval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
@@ -31,7 +30,7 @@ export default function NaughtyNice({ onClose }: NaughtyNiceProps) {
           determineResult();
           return 100;
         }
-        return prev + 2; // Increment by 2% every 60ms = ~3 seconds
+        return prev + 2;
       });
     }, 60);
   };
@@ -46,7 +45,6 @@ export default function NaughtyNice({ onClose }: NaughtyNiceProps) {
   const determineResult = () => {
     setIsScanning(false);
 
-    // 50/50 chance
     const isNice = Math.random() > 0.5;
 
     if (isNice) {

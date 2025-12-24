@@ -61,7 +61,6 @@ export default function Countdown() {
     return () => clearInterval(timer);
   }, []);
 
-  // Prevent hydration mismatch
   if (!mounted) {
     return (
       <div className="w-full py-6 bg-gradient-to-r from-red-800 via-green-800 to-red-800">
@@ -91,9 +90,7 @@ export default function Countdown() {
             🎄 Christmas Countdown 🎄
           </h3>
 
-          {/* Flip Clock Display */}
           <div className="flex justify-center gap-2 md:gap-4 mb-4">
-            {/* Days */}
             <div className="flex flex-col items-center">
               <div className="bg-gray-900 rounded-lg p-3 md:p-4 border-4 border-yellow-400 shadow-2xl min-w-[60px] md:min-w-[80px]">
                 <motion.div
@@ -115,7 +112,6 @@ export default function Countdown() {
               :
             </div>
 
-            {/* Hours */}
             <div className="flex flex-col items-center">
               <div className="bg-gray-900 rounded-lg p-3 md:p-4 border-4 border-yellow-400 shadow-2xl min-w-[60px] md:min-w-[80px]">
                 <motion.div
@@ -137,7 +133,6 @@ export default function Countdown() {
               :
             </div>
 
-            {/* Minutes */}
             <div className="flex flex-col items-center">
               <div className="bg-gray-900 rounded-lg p-3 md:p-4 border-4 border-yellow-400 shadow-2xl min-w-[60px] md:min-w-[80px]">
                 <motion.div
@@ -159,7 +154,6 @@ export default function Countdown() {
               :
             </div>
 
-            {/* Seconds */}
             <div className="flex flex-col items-center">
               <div className="bg-gray-900 rounded-lg p-3 md:p-4 border-4 border-yellow-400 shadow-2xl min-w-[60px] md:min-w-[80px]">
                 <motion.div
@@ -178,7 +172,6 @@ export default function Countdown() {
             </div>
           </div>
 
-          {/* Sleeps Left */}
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}

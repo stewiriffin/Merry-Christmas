@@ -81,10 +81,8 @@ export default function ChristmasCard() {
             exit={{ opacity: 0, scale: 0.8 }}
             className="min-h-screen bg-gradient-to-br from-green-700 via-red-700 to-green-800 flex flex-col relative z-10"
           >
-            {/* Countdown at the top */}
             <Countdown />
 
-            {/* Main Content Centered */}
             <div className="flex-1 flex items-center justify-center p-4">
               <motion.div
                 initial={{ y: -50, opacity: 0 }}
@@ -127,7 +125,6 @@ export default function ChristmasCard() {
             animate={{ opacity: 1, scale: 1 }}
             className="min-h-screen bg-gradient-to-br from-red-950 via-red-900 to-red-950 relative z-10 pb-12"
           >
-            {/* Pine Branch at Top */}
             <div className="relative">
               <svg
                 className="w-full h-24 md:h-32"
@@ -149,7 +146,6 @@ export default function ChristmasCard() {
               </svg>
             </div>
 
-            {/* Header */}
             <motion.div
               initial={{ y: -30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -164,7 +160,6 @@ export default function ChristmasCard() {
               </p>
             </motion.div>
 
-            {/* Hanging Ornaments */}
             <div className="max-w-6xl mx-auto px-4">
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8">
                 {ornaments.map((ornament) => {
@@ -181,7 +176,6 @@ export default function ChristmasCard() {
                       }}
                       className="flex flex-col items-center"
                     >
-                      {/* String */}
                       <motion.div
                         className="w-0.5 bg-yellow-200/60 mb-2"
                         initial={{ height: 0 }}
@@ -189,7 +183,6 @@ export default function ChristmasCard() {
                         transition={{ delay: ornament.delay, duration: 0.5 }}
                       />
 
-                      {/* Ornament */}
                       <motion.div
                         whileHover={{
                           rotate: [0, -8, 8, -8, 8, 0],
@@ -213,10 +206,8 @@ export default function ChristmasCard() {
                           transformOrigin: "top center",
                         }}
                       >
-                        {/* Ornament Cap */}
                         <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-8 h-6 bg-gradient-to-b from-yellow-400 to-yellow-600 rounded-t-lg z-10" />
 
-                        {/* Ornament Ball */}
                         <div
                           className={`w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br ${ornament.color} shadow-2xl border-4 border-yellow-400/50 flex items-center justify-center transform transition-all group-hover:border-yellow-300 group-hover:shadow-yellow-400/50`}
                         >
@@ -228,11 +219,9 @@ export default function ChristmasCard() {
                           </div>
                         </div>
 
-                        {/* Shine Effect */}
                         <div className="absolute top-6 left-6 w-12 h-12 bg-white/30 rounded-full blur-md" />
                       </motion.div>
 
-                      {/* Description below */}
                       <motion.p
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -250,7 +239,6 @@ export default function ChristmasCard() {
         )}
       </AnimatePresence>
 
-      {/* Modals */}
       <AnimatePresence>
         {activeModal === "trivia" && (
           <TriviaGame onClose={() => setActiveModal(null)} />

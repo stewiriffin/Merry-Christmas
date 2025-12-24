@@ -21,7 +21,6 @@ export default function TreeDecorator({ onClose }: TreeDecoratorProps) {
   const [decorations, setDecorations] = useState<Decoration[]>([]);
 
   const handleDragEnd = (emoji: string, event: any, info: any) => {
-    // Get the position relative to the tree area
     const newDecoration: Decoration = {
       id: `${Date.now()}-${Math.random()}`,
       emoji,
@@ -69,15 +68,12 @@ export default function TreeDecorator({ onClose }: TreeDecoratorProps) {
           </p>
         </div>
 
-        {/* Tree Area */}
         <div className="relative bg-gradient-to-b from-blue-900/30 to-blue-950/30 rounded-2xl p-8 mb-6 min-h-[400px] md:min-h-[500px] overflow-hidden border-2 border-yellow-400/30">
-          {/* Tree SVG */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
             <svg
               viewBox="0 0 200 240"
               className="w-64 md:w-80 h-auto drop-shadow-2xl"
             >
-              {/* Tree Layers */}
               <polygon
                 points="100,20 60,80 140,80"
                 fill="#2d5016"
@@ -96,7 +92,6 @@ export default function TreeDecorator({ onClose }: TreeDecoratorProps) {
                 stroke="#1e3a1e"
                 strokeWidth="2"
               />
-              {/* Trunk */}
               <rect
                 x="85"
                 y="180"
@@ -106,7 +101,6 @@ export default function TreeDecorator({ onClose }: TreeDecoratorProps) {
                 stroke="#654321"
                 strokeWidth="2"
               />
-              {/* Star on top */}
               <polygon
                 points="100,5 105,18 118,18 108,26 112,38 100,30 88,38 92,26 82,18 95,18"
                 fill="#FFD700"
@@ -116,7 +110,6 @@ export default function TreeDecorator({ onClose }: TreeDecoratorProps) {
             </svg>
           </div>
 
-          {/* Placed Decorations */}
           <AnimatePresence>
             {decorations.map((decoration) => (
               <motion.div
@@ -136,7 +129,6 @@ export default function TreeDecorator({ onClose }: TreeDecoratorProps) {
           </AnimatePresence>
         </div>
 
-        {/* Toy Box */}
         <div className="bg-gradient-to-br from-yellow-700 to-yellow-900 rounded-2xl p-4 border-4 border-yellow-400">
           <div className="flex items-center justify-center gap-2 mb-3">
             <h3 className="text-2xl font-bold text-white">🎁 Toy Box 🎁</h3>
@@ -165,7 +157,6 @@ export default function TreeDecorator({ onClose }: TreeDecoratorProps) {
           </p>
         </div>
 
-        {/* Controls */}
         <div className="flex gap-4 justify-center mt-6">
           <motion.button
             whileHover={{ scale: 1.05 }}
@@ -186,7 +177,6 @@ export default function TreeDecorator({ onClose }: TreeDecoratorProps) {
           </motion.button>
         </div>
 
-        {/* Decoration Count */}
         {decorations.length > 0 && (
           <motion.div
             initial={{ scale: 0 }}

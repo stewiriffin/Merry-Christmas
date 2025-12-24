@@ -9,7 +9,6 @@ interface PhotoWallProps {
 }
 
 export default function PhotoWall({ onClose }: PhotoWallProps) {
-  // Generate photo IDs for variety
   const photoIds = [100, 200, 300, 400, 500, 600, 700, 800, 900];
 
   return (
@@ -43,7 +42,6 @@ export default function PhotoWall({ onClose }: PhotoWallProps) {
               <Heart className="mx-auto text-red-400" size={40} />
             </div>
 
-            {/* Year in Review Message */}
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
@@ -55,7 +53,6 @@ export default function PhotoWall({ onClose }: PhotoWallProps) {
               </div>
             </motion.div>
 
-            {/* Photo Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
               {photoIds.map((id, index) => (
                 <motion.div
@@ -74,14 +71,12 @@ export default function PhotoWall({ onClose }: PhotoWallProps) {
                     />
                   </div>
 
-                  {/* Hover Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl flex items-end justify-center pb-4">
                     <span className="text-white font-semibold text-lg">
                       Memory #{index + 1}
                     </span>
                   </div>
 
-                  {/* Decorative corner ribbon */}
                   <div className="absolute -top-2 -right-2 bg-yellow-400 text-red-900 rounded-full w-10 h-10 flex items-center justify-center font-bold shadow-lg">
                     {index + 1}
                   </div>
@@ -89,7 +84,6 @@ export default function PhotoWall({ onClose }: PhotoWallProps) {
               ))}
             </div>
 
-            {/* Close Button at Bottom */}
             <div className="text-center mt-8">
               <button
                 onClick={onClose}
